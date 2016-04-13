@@ -8,7 +8,10 @@
     $("#user_input").keypress(function(event) {
         if (event.which == 13) {
             event.preventDefault();
-            socket.emit('chat message', $('#user_input').val());
+            var message={ 'courseID': $('#courseID').val(),
+                'message': $('#user_input').val() };
+
+            socket.emit('chat message', message);
             //console.log( $('#user_input').val());
             $('#user_input').val('');
             //$("form").submit();

@@ -35,7 +35,8 @@ var courseSchema = new mongoose.Schema({
 
 var courseRatingSchema = new mongoose.Schema({
     "course_id": String,
-    "rating": String
+    "rating": String,
+    "userCount": Number
 
 }, {
 	collection: "overallratings"
