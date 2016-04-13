@@ -157,6 +157,7 @@ io.on('connection', function(socket) {
         var news = new models.theNews({
             "user": socket.request.session.passport.user.username,
             "message": msg,
+            "course_id": "570dc1e3e4b0cbcd095d62d8",  //temp TODO: change later
             "photos" : socket.request.session.passport.user.photos,
             "posted": Date.now()
         });
