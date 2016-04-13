@@ -11,6 +11,7 @@ var mongoose = require('mongoose');
 var passport = require('passport');
 var handlebars = require('express-handlebars');
 
+
 require("dotenv").load();
 var models = require("./models");
 var db = mongoose.connection;
@@ -55,14 +56,32 @@ app.engine('html', handlebars({ defaultLayout: 'layout', extname: '.html' }));
 app.set("view engine", "html");
 app.set("views", __dirname + "/views");
 app.use(express.static(path.join(__dirname, "public")));
+
+
+
+
+
 app.use(parser.cookie());
 app.use(parser.body.urlencoded({ extended: true }));
 app.use(parser.body.json());
 app.use(require('method-override')());
 app.use(session_middleware);
 /* TODO: Passport Middleware Here*/
+
+//app.use(session({ secret: 'anything' }));
+
 app.use(passport.initialize());
 app.use(passport.session());
+
+//var loggedIn;
+app.get('/logout', function( req, res){
+    console.log("loggggging out")
+    req.logOut();
+    //loggedIn=false;
+   // req.session.destroy();
+    res.redirect('/');
+    //res.clearCookie();
+});
 
 /* TODO: Use Twitter Strategy for Passport here */
 passport.use(new strategy.Twitter({
@@ -125,12 +144,38 @@ passport.deserializeUser(function(user, done) {
 });
 // Routes
 app.get("/", router.index.view);
-app.get("/chat", router.chat.view);
+app.get("/chat", isAuthenticated, router.chat.view);
 /* TODO: Routes for OAuth using Passport */
 app.get('/auth/twitter', passport.authenticate('twitter'));
 app.get('/auth/twitter/callback',
   passport.authenticate('twitter', { successRedirect: '/chat',
                                      failureRedirect: '/' }));
+
+function isAuthenticated(req, res, next) {
+
+    
+    // IF A USER ISN'T LOGGED IN, THEN REDIRECT THEM SOMEWHERE
+    if (req.isAuthenticated()) {
+        // req.user is available for use here
+        return next(); }
+
+    // denied. redirect to login
+    res.redirect('/')
+}
+
+/*function isLoggedIn(passport, req, res, next) {
+
+    // if user is authenticated in the session, carry on
+    //console.log(req);
+    var loggedIn = req.isAuthenticated();
+    console.log("hihihihihi");
+    console.log(loggedIn);
+    if (loggedIn)
+    {return next();}
+
+    // if they aren't redirect them to the home page
+    res.redirect('/');
+}*/
 // More routes here if needed
 /*io.on('connection', function(socket){
     console.log('a user connected');
@@ -156,12 +201,13 @@ io.on('connection', function(socket) {
     socket.on("chat message", function(msg) {
         var news = new models.theNews({
             "user": socket.request.session.passport.user.username,
-            "message": msg,
-            "course_id": "570dc1e3e4b0cbcd095d62d8",  //temp TODO: change later
+            "message": msg.message,
+            "course_id": msg.courseID,  //temp
             "photos" : socket.request.session.passport.user.photos,
             "posted": Date.now()
         });
         //console.log(socket.request.session.passport.user);
+        console.log(msg);
 
         news.save(function(err, news) {
             if (err)
