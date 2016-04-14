@@ -6,7 +6,7 @@
     <meta name="author" content=""> <!-- Put you name in content -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href='https://fonts.googleapis.com/css?family=Lato:400,700,300' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="./css/style.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
     <title>COGS 121 - Assignment 1</title>
 
 
@@ -52,11 +52,20 @@
           </div>
         </div> 
     </header>
-    <section>
+
+    <section id="coursepaddingtop">
+        <div id="inner">
+            <p id="coursetextboxtitles">CI {{name}}</p>
+            <div id="courseinfo">INFO {{info}}
+            </div></div>
+    </section>
+
+    <section id="bodypaddingtop">
         <div id="inner">
             <form id="send_message" action="">
-                <input id="user_input" placeholder="Type a new message and hit enter!" autocomplete="off" />
+                <input id="user_input" placeholder="WHAT'S YOUR OPINION?" autocomplete="off" />
             </form>
+
             <ul id="messages">
                 {{#each newsfeed}}
                 <hr>
@@ -80,6 +89,7 @@
         </div>
         <form><input id="courseID" type="hidden" value="{{courseID}}"></form>
     </section>
+
     <footer>
         &copy; 2016. COGS 121 Spring 2016
     </footer>

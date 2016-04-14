@@ -26,7 +26,7 @@ var courseSchema = new mongoose.Schema({
 	"name": String,
     "prof": String,
     "info": String,
-    "number": Number
+    "number": Number  //UCSD's courseID
 
 }, {
 	collection: "courses"
