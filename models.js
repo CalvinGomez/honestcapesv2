@@ -17,7 +17,7 @@ var NewsFeedSchema= new mongoose.Schema({
     "course_id": String,
     "posted": Date,
     "photos": [ {"value": String } ]
-},{
+}, {
     collection: "comments"
 });
 
@@ -27,7 +27,6 @@ var courseSchema = new mongoose.Schema({
     "prof": String,
     "info": String,
     "number": Number
-
 }, {
 	collection: "courses"
 });
