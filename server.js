@@ -118,16 +118,16 @@ passport.use(new strategy.Twitter({
                     });
     } else {
         // (3) since the user is found, update user’s information
-        var currentUser = new models.User({
+        // var currentUser = new models.User({
 
-        	"twitterID" : profile.id,
-	        "token" : token,
-	        "username" : profile.username,
-	        "displayName" : profile.displayName,
-	        "photos" : profile.photos
-        });
-        console.log("Current User:")
-        console.log(currentUser);
+        // 	"twitterID" : profile.id,
+	       //  "token" : token,
+	       //  "username" : profile.username,
+	       //  "displayName" : profile.displayName,
+	       //  "photos" : profile.photos
+        // });
+        // console.log("Current User:")
+        // console.log(currentUser);
         process.nextTick(function() {
             return done(null, profile);
         });
@@ -144,13 +144,14 @@ passport.deserializeUser(function(user, done) {
 });
 // Routes
 app.get("/", router.index.homepage);
+app.get("/courses", router.index.courses);
 // app.get("/homepage", router.index.homepage);
 app.get("/chat", isAuthenticated, router.chat.view);
 app.get("/results", router.index.rating);
 /* TODO: Routes for OAuth using Passport */
 app.get('/auth/twitter', passport.authenticate('twitter'));
 app.get('/auth/twitter/callback',
-  passport.authenticate('twitter', { successRedirect: '/chat',
+  passport.authenticate('twitter', { successRedirect: '/courses',
                                      failureRedirect: '/' }));
 
 function isAuthenticated(req, res, next) {

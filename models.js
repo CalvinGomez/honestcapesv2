@@ -17,7 +17,7 @@ var NewsFeedSchema= new mongoose.Schema({
     "course_id": String,
     "posted": Date,
     "photos": [ {"value": String } ]
-},{
+}, {
     collection: "comments"
 });
 
@@ -26,8 +26,7 @@ var courseSchema = new mongoose.Schema({
 	"name": String,
     "prof": String,
     "info": String,
-    "number": Number  //UCSD's courseID
-
+    "number": Number
 }, {
 	collection: "courses"
 });
