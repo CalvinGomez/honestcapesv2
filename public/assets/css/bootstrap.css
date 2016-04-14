@@ -1633,7 +1633,8 @@ th {
 }
 
 .table {
-  width: 100%;
+  width: 800px;
+  margin: auto;
   margin-bottom: 20px;
 }
 
@@ -7097,5 +7098,11 @@ td.visible-print {
   th.hidden-print,
   td.hidden-print {
     display: none !important;
+
   }
+ } 
+  .form-group-search-bar {
+  margin-bottom: 15px;
+  width:800px;
+  margin: auto;
 }

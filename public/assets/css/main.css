@@ -22,7 +22,7 @@ body{
 }
 
 .counter{
-  padding:8px; 
+  padding:0px; 
   color:#ccc;
 }
 
@@ -117,6 +117,7 @@ a:after {
 .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
 	color: #ffffff;
 	background-color: #3FE8DC;
+	border-radius: 5px;
 }
 
 .navbar-brand {
@@ -148,15 +149,15 @@ a:after {
 /* hello */
 #hello {
 	width: 100%;
-	padding-top: 18%;
-	padding-bottom: 18%;
+	padding-top: 5%;
+	padding-bottom: 5%;
 }
 
 #hello h1 {
 	font-size: 95px;
 	font-weight: 700;
 	letter-spacing: 3px;
-	color: #3399ff;
+	color: #3FE8DC;
 }
 
 #hello h2 {
@@ -164,11 +165,27 @@ a:after {
 	font-weight: 400;
 }
 
+/*#hello h5 { 
+	border: 0px; 
+	padding: 0px;
+	margin: auto;
+	outline:0; 
+	height:60px; 
+	width: 60px; 
+	background: transparent;
+	white-space: pre-wrap;
+}*/ 
+
 
 #twitter {
-	font-size: 70px;
+	font-size: 85px;
 	vertical-align: center;
 	color: #3FE8DC;
+}
+
+#twitter h5{
+	color: #3FE8DC;
+	font-size: 18px;
 }
 
 /* Green */

@@ -15,7 +15,6 @@
     <!-- Custom styles for this template -->
     <link href="assets/css/main.css" rel="stylesheet">
     <link href="assets/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
 
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="assets/js/chart.js"></script>
@@ -41,7 +40,7 @@
           </button>
           <a class="navbar-brand" href="#"><i class="fa fa-bolt"></i></a>
         </div>
-       <!-- <div class="navbar-collapse collapse">
+        <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
             <li class="active"><a href="#contact">Logout</a></li>
           </ul>
@@ -49,46 +48,73 @@
       </div>
     </div>
 
-	<a name="jumptotable">
-		<div id="hello">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-8 col-lg-offset-2 centered">
-						<h1>HONESTCAPES</h1>
-						<h2>For the students, by the students.</h2>
-					</br>
-					<div id="twitter">
-						<a href="/auth/twitter">
-									<h5>Login with Twitter</h5>
-							<i class="fa fa-twitter" aria-hidden="true"></i>
-						</a>
-	    			</div>	
-	    		</div><!-- /col-lg-8 -->
-	    	</div><!-- /row -->
-	    </div> <!-- /container -->
-	</div><!-- /hello -->
-	</a>	
-	<!-- Placeholder for Twitter login -->
-	
-<!--	<a name = "jumptotable">
-		<div class="container">
-			<div class="row">
-	    		<div class="col-lg-8 col-lg-offset-2 centered">
-	    			<div id="twitter">
-	    			
-	    		</div>
-				</div>
-			</div>
-		</div>
-	</a>
--->
+	<div class="form-group-search-bar">
+		<input type="text" class="search form-control" placeholder="What are looking for?  ie. CSE 170">
+	</div>
+
+	<!--<span class="counter pull-right"></span>-->
+</br>
+	<table class="table table-hover table-bordered results">
+	<thead>
+	  <tr>
+	    <!-- <th>#</th> -->
+	    <th class="col-md-8 col-xs-8">Course</th>
+	    <th class="col-md-4 col-xs-4">Professor</th>
+	  </tr>
+	  <tr class="warning no-result">
+	    <td colspan="4"><i class="fa fa-warning"></i> No result</td>
+	  </tr>
+	</thead>
+	<tbody>
+		{{#each data}}
+		  <tr>
+		    <!-- <th scope="row">1</th> -->
+		    <!-- <td><a href="#">CSE 120</a></td> -->
+		    <td><a href="#">{{name}}</a></td>
+		    <td>{{prof}}</td>
+		  </tr>
+		{{/each}}
+	  <!-- <tr>
+	    <th scope="row">2</th>
+	    <td><a href="#">CSE 131</a></td>
+	    <td>Zhang, Weifeng</td>
+	  </tr>
+	  <tr>
+	    <th scope="row">3</th>
+	    <td><a href="#">CSE 141</a></td>
+	    <td>Tseng, Hung-Wei</td>
+	  </tr>
+	  <tr>
+	    <th scope="row">3</th>
+	    <td><a href="#">CSE 141</a></td>
+	    <td>Tullsen, Dean</td>
+	  </tr>
+	  <tr>
+	    <th scope="row">4</th>
+	    <td><a href="#">COGS 120</a></td>
+	    <td>Klemmer, Scott</td>
+	  </tr>
+	  <tr>
+	    <th scope="row">5</th>
+	    <td><a href="#">COGS 121</a></td>
+	    <td>Weibel, Nadir</td>
+	  </tr>
+	  <tr>
+	    <th scope="row">6</th>
+	    <td><a href="#">COGS 187A</a></td>
+	    <td>Kirsh, David</td>
+	  </tr>
+	  <tr>
+	    <th scope="row">7</th>
+	    <td><a href="#">COGS 187B</a></td>
+	    <td>Kirsh, David</td>
+	  </tr> -->
+	</tbody>
+	</table>
 
 <!-- 	<div id="green">
 		<div class="container">
 			<div class="row">
-
-
-	    		<a><i class="fa fa-twitter" aria-hidden="true"></i></a>
 				<div class="col-lg-5 centered">
 					<img src="assets/img/iphone.png" alt="">
 				</div>
@@ -96,11 +122,10 @@
 				<div class="col-lg-7 centered">
 					<h3>WHAT WE CAN DO?</h3>
 					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-
 				</div>
 			</div>
 		</div>
-	</div>  -->
+	</div> -->
 	
 	<!-- <div class="container">
 		<div class="row centered mt grid">
