@@ -209,8 +209,20 @@ io.on('connection', function(socket) {
             "photos" : socket.request.session.passport.user.photos,
             "posted": Date.now()
         });
+        models.OverallRating.findOne({'course_id': msg.courseID}, function(err, rating){
+            if (err) {return err;}
+            rating.user_Count++;
+            rating.rating=5;
+            rating.save(function(err, rating) {
+                if (err)
+                // console.log(err.errors);
+                    throw err;
+                return rating;
+            });
+
+        });
         //console.log(socket.request.session.passport.user);
-        console.log(msg);
+        //console.log(msg);
 
         news.save(function(err, news) {
             if (err)
