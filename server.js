@@ -126,8 +126,8 @@ passport.use(new strategy.Twitter({
 	        "displayName" : profile.displayName,
 	        "photos" : profile.photos
         });
-        console.log("Current User:")
-        console.log(currentUser);
+       // console.log("Current User:")
+        //console.log(currentUser);
         process.nextTick(function() {
             return done(null, profile);
         });
