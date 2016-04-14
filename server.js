@@ -21,7 +21,7 @@ var io = require('socket.io')(http);
 
 var router = { 
 	index: require("./routes/index"),
-	chat: require("./routes/chat")
+	chat: require("./routes/chat"),
 };
 
 
@@ -52,7 +52,7 @@ var session_middleware = session({
 
 // Middleware
 app.set("port", process.env.PORT || 3000);
-app.engine('html', handlebars({ defaultLayout: 'layout', extname: '.html' }));
+app.engine('html', handlebars());
 app.set("view engine", "html");
 app.set("views", __dirname + "/views");
 app.use(express.static(path.join(__dirname, "public")));
@@ -143,8 +143,10 @@ passport.deserializeUser(function(user, done) {
     done(null, user);
 });
 // Routes
-app.get("/", router.index.view);
+app.get("/", router.index.homepage);
+// app.get("/homepage", router.index.homepage);
 app.get("/chat", isAuthenticated, router.chat.view);
+app.get("/results", router.index.rating);
 /* TODO: Routes for OAuth using Passport */
 app.get('/auth/twitter', passport.authenticate('twitter'));
 app.get('/auth/twitter/callback',
