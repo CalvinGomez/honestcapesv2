@@ -9,8 +9,7 @@ exports.view = function(req, res) {
              //console.log(courseID);
 
             goodStuff=stuff;
-
-            //console.log(data);
+            console.log(goodStuff);
 
         } else { console.log(err);}
     });
@@ -20,6 +19,7 @@ exports.view = function(req, res) {
         rating.save(function(err, rating) {
         });
         var data = {'newsfeed': goodStuff, 'courseID': courseID, 'rating': theRating};
+        console.log(data);
         res.render('chat', data);
     });
 
