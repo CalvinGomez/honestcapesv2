@@ -20,6 +20,7 @@ exports.view = function(req, res) {
         rating.save(function(err, rating) {
         });
         var data = {'newsfeed': goodStuff, 'courseID': courseID, 'rating': theRating};
+        console.log(data)
         res.render('chat', data);
     });
 

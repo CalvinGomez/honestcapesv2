@@ -6,7 +6,7 @@
     <meta name="author" content=""> <!-- Put you name in content -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href='https://fonts.googleapis.com/css?family=Lato:400,700,300' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="./css/style.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
     <title>COGS 121 - Assignment 1</title>
 
 
@@ -15,6 +15,8 @@
     <!-- Custom styles for this template -->
     <link href="assets/css/main.css" rel="stylesheet">
     <link href="assets/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- <link rel="stylesheet" href="ratingassets/css/style.css"> -->
 
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="assets/js/chart.js"></script>
@@ -52,11 +54,28 @@
           </div>
         </div> 
     </header>
-    <section>
+
+    <section id="coursepaddingtop">
+        <div id="inner">
+            <p id="coursetextboxtitles">CI {{name}}</p>
+            <div id="courseinfo">INFO {{info}}
+            </div></div>
+    </section>
+
+    <section id="bodypaddingtop">
         <div id="inner">
             <form id="send_message" action="">
-                <input id="user_input" placeholder="Type a new message and hit enter!" autocomplete="off" />
+                <input id="user_input" placeholder="WHAT'S YOUR OPINION?" autocomplete="off" />
             </form>
+
+            <span class="star-rating">
+                <input type="radio" name="rating" value="1"><i></i>
+                <input type="radio" name="rating" value="2"><i></i>
+                <input type="radio" name="rating" value="3"><i></i>
+                <input type="radio" name="rating" value="4"><i></i>
+                <input type="radio" name="rating" value="5"><i></i>
+            </span>
+
             <ul id="messages">
                 {{#each newsfeed}}
                 <hr>
@@ -81,6 +100,7 @@
         <h2>{{rating}}</h2>
         <form><input id="courseID" type="hidden" value="{{courseID}}"></form>
     </section>
+
     <footer>
         &copy; 2016. COGS 121 Spring 2016
     </footer>
@@ -89,6 +109,9 @@
     <script src="./js/chatbox.js"></script>
     <script src="./js/search.js"></script>
     <script src="assets/js/bootstrap.js"></script>
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+    <script src="ratingassets/js/index.js"></script>  
 </body>
 
 </html>
