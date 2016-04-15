@@ -22,11 +22,14 @@ exports.view = function(req, res) {
                     //});
 
                 }
+                var arr = req.body.coursename.split("-");
                 var course = {
                     "course_id": req.body.courseid,
                     "course_name": req.body.coursename,
                     "course_info": req.body.courseinfo,
-                    "course_prof": req.body.courseprof
+                    "course_prof": req.body.courseprof,
+                    "course_name_firstHalf": arr[0],
+                    "course_name_secondHalf": arr[1],
                 };
                 var data = {'newsfeed': stuff.reverse(), 'course': course, 'rating': theRating};
                 // console.log(data);

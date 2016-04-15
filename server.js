@@ -50,15 +50,13 @@ var session_middleware = session({
     store: new MongoStore({ mongooseConnection: db })
 });
 
+
 // Middleware
 app.set("port", process.env.PORT || 3000);
 app.engine('html', handlebars());
 app.set("view engine", "html");
 app.set("views", __dirname + "/views");
 app.use(express.static(path.join(__dirname, "public")));
-
-
-
 
 
 app.use(parser.cookie());
