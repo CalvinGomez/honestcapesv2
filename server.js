@@ -146,7 +146,7 @@ passport.deserializeUser(function(user, done) {
 app.get("/", router.index.homepage);
 app.get("/courses", router.index.courses);
 // app.get("/homepage", router.index.homepage);
-app.get("/chat", isAuthenticated, router.chat.view);
+app.post("/chat", isAuthenticated, router.chat.view);
 app.get("/results", router.index.rating);
 /* TODO: Routes for OAuth using Passport */
 app.get('/auth/twitter', passport.authenticate('twitter'));

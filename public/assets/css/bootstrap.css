@@ -326,6 +326,11 @@ a {
   text-decoration: none;
 }
 
+.submitLink {
+  color: #3FE8DC;
+  text-decoration: none;
+}
+
 a:hover,
 a:focus {
   color: #2a6496;
