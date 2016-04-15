@@ -278,3 +278,20 @@ a:after {
 .grid img:hover {
     opacity: 1;
 }
+
+.submitLink {
+    padding:0;
+    background-color:transparent;
+    text-decoration:underline;
+    border:none;
+    border:0;
+    color:#3FE8DC;
+    cursor:pointer;
+    font-family:inherit;
+    font-size:inherit;
+}
+
+.submitLink::-moz-focus-inner {
+    border:0;
+    padding:0;
+}
