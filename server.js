@@ -118,6 +118,7 @@ passport.use(new strategy.Twitter({
                     });
     } else {
         // (3) since the user is found, update user’s information
+
         // var currentUser = new models.User({
 
         // 	"twitterID" : profile.id,
