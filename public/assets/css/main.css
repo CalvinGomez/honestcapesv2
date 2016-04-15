@@ -180,20 +180,23 @@ a:after {
   	unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
 } 
 
-
 #twitter {
-	margin: auto;
-	font-size: 85px;
+	font-size: 28px;
 	vertical-align: center;
 	color: #3FE8DC;
 	float: left;
+	width: 100%;
 }
 
-#twitter h5{
-	margin: auto;
+#twitter-icon {
+	float: left;
+}
+
+#twitter-text h5{
+	margin-left: 1%;
+	float: left;
 	color: #3FE8DC;
 	font-size: 18px;
-	float: right;
 }
 
 /* Green */
