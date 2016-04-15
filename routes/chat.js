@@ -2,8 +2,8 @@ var models = require("../models");
 
 exports.view = function(req, res) {
 
-	var courseID = "570dc2b7e4b0cbcd095d62e4";
-    console.log(req.body.courseid);
+	// var courseID = "570dc2b7e4b0cbcd095d62e4";
+    // console.log(req.body.courseid);
     models.theNews.find({"course_id":req.body.courseid}, function(err, stuff){
         if (!err){
              //console.log(courseID);
@@ -22,8 +22,14 @@ exports.view = function(req, res) {
                     //});
 
                 }
-                var data = {'newsfeed': stuff, 'courseID': req.body.courseid, 'rating': theRating};
-                console.log(data);
+                var course = {
+                    "course_id": req.body.courseid,
+                    "course_name": req.body.coursename,
+                    "course_info": req.body.courseinfo,
+                    "course_prof": req.body.courseprof
+                };
+                var data = {'newsfeed': stuff.reverse(), 'course': course, 'rating': theRating};
+                // console.log(data);
                 res.render('chat', data);
 
             });

@@ -210,9 +210,11 @@ io.on('connection', function(socket) {
             "photos" : socket.request.session.passport.user.photos,
             "posted": Date.now()
         });
+        console.log(msg.courseID);
         models.OverallRating.findOne({'course_id': msg.courseID}, function(err, rating){
+            
             if (err) {return err;}
-            rating.user_Count++;
+            rating.userCount++;
             rating.rating=5;
             rating.save(function(err, rating) {
                 if (err)

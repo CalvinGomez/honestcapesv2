@@ -57,8 +57,8 @@
 
     <section id="coursepaddingtop">
         <div id="inner">
-            <p id="coursetextboxtitles">CI {{name}}</p>
-            <div id="courseinfo">INFO {{info}}
+            <p id="coursetextboxtitles">{{course.course_name}}</p>
+            <div id="courseinfo">{{course.course_info}}
             </div></div>
     </section>
 
@@ -90,7 +90,7 @@
             </ul>
         </div>
         <h2>{{rating}}</h2>
-        <form><input id="courseID" type="hidden" value="{{courseID}}"></form>
+        <form><input id="courseID" type="hidden" value="{{course.course_id}}"></form>
     </section>
 
     <footer>
