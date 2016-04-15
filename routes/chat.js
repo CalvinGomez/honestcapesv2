@@ -9,7 +9,6 @@ exports.view = function(req, res) {
     models.theNews.find({"course_id":courseID}, function(err, stuff){
         if (!err){
              //console.log(courseID);
-
             //goodStuff=stuff;
             models.OverallRating.findOne({'course_id': courseID}, function(err, rating){
                 if (err) { return err; }
