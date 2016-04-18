@@ -2506,6 +2506,12 @@ fieldset[disabled] .btn-success.active {
   border-color: #46b8da;
 }
 
+.btn-help{
+  color: #ffffff;
+  background-color: #3FE8DC;
+  border-color: #3FE8DC;
+}
+
 .btn-info:hover,
 .btn-info:focus,
 .btn-info:active,
@@ -4385,6 +4391,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 }
 
 .navbar-collapse {
+  float: right;
   max-height: 340px;
   padding-right: 15px;
   padding-left: 15px;
@@ -6052,6 +6059,7 @@ button.close {
 }
 
 .modal-backdrop.in {
+  z-index: auto;
   opacity: 0.5;
   filter: alpha(opacity=50);
 }
@@ -6059,7 +6067,7 @@ button.close {
 .modal-header {
   min-height: 16.428571429px;
   padding: 15px;
-  border-bottom: 1px solid #e5e5e5;
+/*  border-bottom: 1px solid #e5e5e5;*/
 }
 
 .modal-header .close {
