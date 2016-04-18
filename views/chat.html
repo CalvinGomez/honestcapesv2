@@ -14,6 +14,7 @@
 
     <!-- Custom styles for this template -->
     <link href="assets/css/main.css" rel="stylesheet">
+    <link href="assets/css/star-rating.css" rel+"stylesheet">
     <link href="assets/css/font-awesome.min.css" rel="stylesheet">
 
     <!-- <link rel="stylesheet" href="ratingassets/css/style.css"> -->
@@ -55,42 +56,7 @@
             <li class="active"><a href="/logout">Logout</a></li>
           </ul>
         </div>
-        <!-- Modal -->
-        <div id="myModal" class="modal fade" role="dialog">
-          <div class="modal-dialog">
 
-            <!-- Modal content-->
-            <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Read me first!</h4>
-              </div>
-
-        <div class="col-lg-8 col-lg-offset-2 centered">
-        <h3>What is HONESTCAPES?</h3>
-        <p>HONESTCAPES is a social media wesbite designed by UCSD students, for UCSD students. It's a scaled-down, minimalistic version of CAPES, which allows you to rate and comment about your professor/class without the hassle.</p>
-
-        <h3>How do I start?</h3>
-        <p>Begin by logging in with your Twitter account. From there, go ahead and search either the course name or the professor whose class you wish to review or learn more about. Click on the corresponding class, and then you can rate the class, make comments about any aspect of it (uncensored!), or read posts that others have made for a better sense of what that class is about.
-        </p>
-
-        <h3>What makes HONESTCAPES different than CAPES, or even RateMyProfessor?</h3>
-        <p> HONESTCAPES provides a melding balance between the two, taking what we considered the most important aspects of both. Like CAPES, you're not limited to searching for only a professor or only a class--both options are available to you. Like RateMyProfessor, HONESTCAPES does not go through the school, so you can say what you want without feeling restricted. Additionally, HONESTCAPES keeps its interface minimal and clean, so you don't have to answer a bunch of unecessary questions the way CAPES makes you do. It's CAPES, but free. Therefore, HONESTCAPES.</p>
-
-        <h3>Criticism</h3>
-        <p>Your feedback is extremely important as it makes it easier for us to focus 
-        on the right stuff. We encourage you to share your ideas and criticism because 
-        they play a vital role in the process of building a useful app for you! </p>
-                    </br>
-                    
-                </div><!-- /col-lg-8 -->
-
-              <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-              </div>
-            </div>
-          </div>
-        </div>
         <!-- Help/Documentation End-->
 
             <!-- <div class="navbar-collapse collapse">
@@ -113,27 +79,27 @@
     <section id="bodypaddingtop">
         <div id="inner">
 
-            <!-- Radio Buttons -->
+            <!-- Radio Rating -->
             <form>
-                <div class="row">
-                    <div class="col-sm-7">
-                        <div class="btn-group" data-toggle="buttons">
-                            <label class="btn btn-default">
-                                <input type="radio" id="q156" name="quality[25]" value="1" /> 1
+                <div class="row" style="padding-top: 10px;">
+                    <div class="col-sm-9">
+                        <div align="center">
+                            <label >
+                                <input type="radio" id="q128" name="quality[21]" value="1" /> 1
                             </label> 
-                            <label class="btn btn-default">
-                                <input type="radio" id="q157" name="quality[25]" value="2" /> 2
+                            <label >
+                                <input type="radio" id="q129" name="quality[21]" checked="checked" value="2" /> 2
                             </label> 
-                            <label class="btn btn-default">
-                                <input type="radio" id="q158" name="quality[25]" value="3" /> 3
+                            <label >
+                                <input type="radio" id="q130" name="quality[21]" value="3" /> 3
                             </label> 
-                            <label class="btn btn-default">
-                                <input type="radio" id="q159" name="quality[25]" value="4" /> 4
+                            <label >
+                                <input type="radio" id="q131" name="quality[21]" value="4" /> 4
                             </label> 
-                            <label class="btn btn-default active">
-                                <input type="radio" id="q160" name="quality[25]" checked="checked" value="5" /> 5
+                            <label >
+                                <input type="radio" id="q132" name="quality[21]" value="5" /> 5
                             </label>
-                            <input type="submit" class="btn btn-primary" value="Submit"></input>
+                            <input type="submit" class="btn-rate btn-primary" value="Submit"></input>
                         </div>
                     </div>
                 </div>
@@ -192,6 +158,43 @@
         <form><input id="courseID" type="hidden" value="{{course.course_id}}"></form>
     </section>
 
+        <!-- Modal -->
+        <div id="myModal" class="modal fade" role="dialog">
+          <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Help Page:</h4>
+              </div>
+
+        <div class="col-lg-8 col-lg-offset-2 centered">
+        <h3>What is HONESTCAPES?</h3>
+        <p>HONESTCAPES is a social media wesbite designed by UCSD students, for UCSD students. It's a scaled-down, minimalistic version of CAPEs, which allows you to rate and comment about your professor/class without the hassle.</p>
+
+        <h3>How do I start?</h3>
+        <p>Begin by logging in with your Twitter account. From there, go ahead and search either the course name or the professor whose class you wish to review or learn more about. Click on the corresponding class, and then you can rate the class, make comments about any aspect of it (uncensored!), or read posts that others have made for a better sense of what that class is about.
+        </p>
+
+        <h3>What makes HONESTCAPES different than CAPEs, or even RateMyProfessor?</h3>
+        <p> HONESTCAPES provides a melding balance between the two, taking what we considered the most important aspects of both. Like CAPEs, you're not limited to searching for only a professor or only a class--both options are available to you. Like RateMyProfessor, HONESTCAPES does not go through the school, so you can say what you want without feeling restricted. Additionally, HONESTCAPES keeps its interface minimal and clean, so you don't have to answer a bunch of unecessary questions the way CAPEs makes you do. It's CAPEs, but free. Therefore, HONESTCAPES.</p>
+
+        <h3>Criticism</h3>
+        <p>Your feedback is extremely important as it makes it easier for us to focus 
+        on the right stuff. We encourage you to share your ideas and criticism because 
+        they play a vital role in the process of building a useful app for you! </p>
+                    </br>
+                    
+                </div><!-- /col-lg-8 -->
+
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
     <footer>
         &copy; COGS 121 Spring 2016
     </footer>
@@ -202,8 +205,6 @@
     <script src="./js/radio.js"></script>
     <script src="assets/js/bootstrap.js"></script>
     <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-
-    <script src="ratingassets/js/index.js"></script>  
 </body>
 
 </html>

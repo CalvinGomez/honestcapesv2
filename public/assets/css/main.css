@@ -60,6 +60,7 @@ p {
 }
 
 .centered {
+	font-family: "Lato";
     text-align: center;
 }
 
@@ -144,6 +145,15 @@ a:after {
 	padding: 0px 20px;
 	margin-bottom: 0;
 	font-size: 30px;
+	border: 5px solid transparent;
+	border-radius: 5px;
+}
+
+.btn-rate {
+	margin-left: 5px;
+	padding: 0px 15px;
+	margin-bottom: 0;
+	font-size: 14px;
 	border: 5px solid transparent;
 	border-radius: 5px;
 }
