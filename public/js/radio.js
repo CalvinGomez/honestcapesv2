@@ -1,4 +1,4 @@
 $("form").submit(function() {
-    console.log($(this).serializeArray());
+    // console.log($(this).serializeArray());
     return false;
 });
