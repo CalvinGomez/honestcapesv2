@@ -185,6 +185,7 @@ a:after {
 	font-size: 75px;
 	vertical-align: center;
 	color: #3FE8DC;
+	float: left;
 	width: 100%;
 }
 
