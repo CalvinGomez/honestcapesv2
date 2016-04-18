@@ -50,15 +50,13 @@ var session_middleware = session({
     store: new MongoStore({ mongooseConnection: db })
 });
 
+
 // Middleware
 app.set("port", process.env.PORT || 3000);
 app.engine('html', handlebars());
 app.set("view engine", "html");
 app.set("views", __dirname + "/views");
 app.use(express.static(path.join(__dirname, "public")));
-
-
-
 
 
 app.use(parser.cookie());
@@ -147,7 +145,7 @@ passport.deserializeUser(function(user, done) {
 app.get("/", router.index.homepage);
 app.get("/courses", router.index.courses);
 // app.get("/homepage", router.index.homepage);
-app.get("/chat", isAuthenticated, router.chat.view);
+app.post("/chat", isAuthenticated, router.chat.view);
 app.get("/results", router.index.rating);
 /* TODO: Routes for OAuth using Passport */
 app.get('/auth/twitter', passport.authenticate('twitter'));
@@ -210,9 +208,11 @@ io.on('connection', function(socket) {
             "photos" : socket.request.session.passport.user.photos,
             "posted": Date.now()
         });
+        console.log(msg.courseID);
         models.OverallRating.findOne({'course_id': msg.courseID}, function(err, rating){
+            
             if (err) {return err;}
-            rating.user_Count++;
+            rating.userCount++;
             rating.rating=5;
             rating.save(function(err, rating) {
                 if (err)

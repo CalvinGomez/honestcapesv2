@@ -1,34 +1,43 @@
 var models = require("../models");
 
 exports.view = function(req, res) {
-    //var goodStuff=null;
-    //var data=null;
-    //var theRating=1;
 
-	var courseID = "570dc2b7e4b0cbcd095d62e4";
-    models.theNews.find({"course_id":courseID}, function(err, stuff){
+	// var courseID = "570dc2b7e4b0cbcd095d62e4";
+    // console.log(req.body.courseid);
+    models.theNews.find({"course_id":req.body.courseid}, function(err, stuff){
         if (!err){
              //console.log(courseID);
-            //goodStuff=stuff;
-            models.OverallRating.findOne({'course_id': courseID}, function(err, rating){
+            models.OverallRating.findOne({'course_id': req.body.courseid}, function(err, rating){
                 if (err) { return err; }
-                var theRating=rating.rating;
-                //rating.save(function(err, rating) {
-                //});
-                var data = {'newsfeed': stuff, 'courseID': courseID, 'rating': theRating};
-                console.log(data);
+                if (rating==null){
+                    var newRating= new models.OverallRating({
+                        "course_id": req.body.courseid,
+                        "rating": 0,
+                        "userCount": 0
+                    });
+                    newRating.save(function(err, newRating){if (err) throw err;});
+                } else {
+                    var theRating = rating.rating;
+                    //rating.save(function(err, rating) {
+                    //});
+
+                }
+                var arr = req.body.coursename.split("-");
+                var course = {
+                    "course_id": req.body.courseid,
+                    "course_name": req.body.coursename,
+                    "course_info": req.body.courseinfo,
+                    "course_prof": req.body.courseprof,
+                    "course_name_firstHalf": arr[0],
+                    "course_name_secondHalf": arr[1],
+                };
+                var data = {'newsfeed': stuff.reverse(), 'course': course, 'rating': theRating};
+                // console.log(data);
                 res.render('chat', data);
 
             });
 
-            //console.log(data);
-            //var data = {'newsfeed': goodStuff, 'courseID': courseID };
-            //res.render('chat', data);
-
         } else { console.log(err);}
     });
-
-
-
 
 };
