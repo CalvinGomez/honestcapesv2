@@ -47,8 +47,8 @@ body {
 
 /* Titles */
 h1, h2, h3, h4, h5, h6 {
-    font-family: "Raleway";
-    font-weight: 200;
+    font-family: "Lato";
+    font-weight: 800;
     color: #333;
 }
 
@@ -138,6 +138,14 @@ a:after {
 	font-size: 15px;
 	border: 5px solid transparent;
 	border-radius: 0px;
+}
+
+.btn-doc {
+	padding: 0px 20px;
+	margin-bottom: 0;
+	font-size: 30px;
+	border: 5px solid transparent;
+	border-radius: 5px;
 }
 
 .lead {

@@ -892,6 +892,7 @@ pre code {
 
 
   padding-left: 15px;
+  padding-right: 15px;
 }
 
 .col-xs-1,
@@ -1127,7 +1128,7 @@ pre code {
   .col-sm-9,
   .col-sm-10,
   .col-sm-11 {
-    float: left;
+    margin: auto;
   }
   .col-sm-12 {
     width: 100%;
@@ -2504,6 +2505,12 @@ fieldset[disabled] .btn-success.active {
   color: #ffffff;
   background-color: #5bc0de;
   border-color: #46b8da;
+}
+
+.btn-help{
+  color: #ffffff;
+  background-color: #3FE8DC;
+  border-color: #3FE8DC;
 }
 
 .btn-info:hover,
@@ -4385,6 +4392,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 }
 
 .navbar-collapse {
+  float: right;
   max-height: 340px;
   padding-right: 15px;
   padding-left: 15px;
@@ -5993,7 +6001,7 @@ button.close {
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: 1040;
+  z-index: 1050;
   display: none;
   overflow: auto;
   overflow-y: scroll;
@@ -6025,6 +6033,7 @@ button.close {
 }
 
 .modal-content {
+  z-index: 2000;
   position: relative;
   background-color: #ffffff;
   border: 1px solid #999999;
@@ -6052,6 +6061,7 @@ button.close {
 }
 
 .modal-backdrop.in {
+  z-index: auto;
   opacity: 0.5;
   filter: alpha(opacity=50);
 }
@@ -6059,7 +6069,7 @@ button.close {
 .modal-header {
   min-height: 16.428571429px;
   padding: 15px;
-  border-bottom: 1px solid #e5e5e5;
+/*  border-bottom: 1px solid #e5e5e5;*/
 }
 
 .modal-header .close {
