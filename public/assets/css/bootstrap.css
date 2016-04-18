@@ -892,6 +892,7 @@ pre code {
 
 
   padding-left: 15px;
+  padding-right: 15px;
 }
 
 .col-xs-1,
@@ -6000,7 +6001,7 @@ button.close {
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: 1040;
+  z-index: 1050;
   display: none;
   overflow: auto;
   overflow-y: scroll;
@@ -6032,6 +6033,7 @@ button.close {
 }
 
 .modal-content {
+  z-index: 2000;
   position: relative;
   background-color: #ffffff;
   border: 1px solid #999999;
