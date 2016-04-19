@@ -52,7 +52,7 @@
 
     <section id="coursepaddingtop">
         <div id="inner">
-            <p id="coursetextboxtitles">{{course.course_name_firstHalf}} (Rating: {{rating}}/5)</p>
+            <p id="coursetextboxtitles">{{course.course_name_firstHalf}} ({{course.course_prof}}) </p>
             <p id="coursetextboxtitles" style="font-size:20px;">  {{course.course_name_secondHalf}}</p>
             <div id="courseinfo">{{course.course_info}}
             </div></div>
@@ -60,6 +60,7 @@
 
     <section id="bodypaddingtop">
         <div id="inner">
+            <h3 style="font-weight:400;">Current Rating: {{rating}}/5</h3>
             {{#if userRated}}
             <div>
                 You have rated this course.
