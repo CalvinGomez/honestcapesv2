@@ -52,7 +52,7 @@
 
     <section id="coursepaddingtop">
         <div id="inner">
-            <p id="coursetextboxtitles">{{course.course_name_firstHalf}}</p>
+            <p id="coursetextboxtitles">{{course.course_name_firstHalf}} ({{rating}} stars)</p>
             <p id="coursetextboxtitles" style="font-size:20px;">  {{course.course_name_secondHalf}}</p>
             <div id="courseinfo">{{course.course_info}}
             </div></div>
@@ -123,7 +123,6 @@
                 {{/each}}
             </ul>
         </div>
-        <h2>{{rating}}</h2>
         <form><input id="courseID" type="hidden" value="{{course.course_id}}"></form>
     </section>
 
