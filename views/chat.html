@@ -54,7 +54,11 @@
 
     <section id="bodypaddingtop">
         <div id="inner">
-
+            {{#if userRated}}
+            <div>
+                You have rated this course.
+            </div>
+            {{else}}
             <!-- Radio Rating -->
             <form method="post" action="/postRating">
             <!-- <form method="post" action="/checking"> -->
@@ -85,6 +89,7 @@
                     </div>
                 </div>
             </form>
+            {{/if}}
             <br>
 
             <form id="send_message" action="">

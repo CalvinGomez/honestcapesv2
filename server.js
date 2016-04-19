@@ -104,6 +104,7 @@ passport.use(new strategy.Twitter({
 	        "displayName" : profile.displayName,
 	        "photos" : profile.photos
         });
+        app.locals.currentLoggedInUsername = profile.username;
         // console.log("New User:")
         // console.log(newUser)
 
@@ -116,7 +117,7 @@ passport.use(new strategy.Twitter({
                     });
     } else {
         // (3) since the user is found, update user’s information
-
+        app.locals.currentLoggedInUsername = profile.username;
         // var currentUser = new models.User({
 
         // 	"twitterID" : profile.id,
@@ -143,12 +144,12 @@ passport.deserializeUser(function(user, done) {
 });
 // Routes
 app.get("/", router.index.homepage);
-app.get("/courses", router.index.courses);
+app.get("/courses", isAuthenticated, router.index.courses);
 // app.get("/homepage", router.index.homepage);
 app.post("/chat", isAuthenticated, router.chat.view);
 app.post("/postRating", router.chat.postRating);
 app.get("/results", router.index.rating);
-app.get("/checking", router.index.homepage);
+// app.get("/checking", router.index.homepage);
 /* TODO: Routes for OAuth using Passport */
 app.get('/auth/twitter', passport.authenticate('twitter'));
 app.get('/auth/twitter/callback',
@@ -239,7 +240,9 @@ io.on('connection', function(socket) {
 
 });
 
-
+app.get('*', function(req, res) {
+    res.redirect("/")
+});
 
 
 // Start Server
