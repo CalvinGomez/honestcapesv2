@@ -2,7 +2,7 @@
 # Alisa Prathnadi A11441371
 # James Kong A10860897
 # Diana Ho
-# Calvin Gomez
+# Calvin Xavier Gomez A53091769
 # Arnold Chen
 
 Nielsen's 10 Heuristics and How They Apply to HONESTCAPES
