@@ -26,27 +26,8 @@
 
 <body>
     <header>
-        <!-- <a class="logout" href="/logout">
-            <div class="logout-button">
-                Logout
-            </div>
-        </a> -->
-    <!-- <div class="search">
-        <svg class="search-icon" style="width:24px;height:24px" viewBox="0 0 24 24">
-            <path fill="#4fa6de" d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" />
-        </svg>
-        <input class="filtered-search" placeholder="Search username or messages" autocomplete="off" />
-    </div> -->
         <div class="navbar navbar-default navbar-fixed-top">
           <div class="container">
-<!--             <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-              <a class="navbar-brand" href="courses"><i class="fa fa-bolt"></i></a>
-            </div> -->
 
         <!-- Help/Documentation Start-->
         <!-- Trigger the modal with a button -->
@@ -59,11 +40,6 @@
 
         <!-- Help/Documentation End-->
 
-            <!-- <div class="navbar-collapse collapse">
-              <ul class="nav navbar-nav navbar-right">
-                <li class="active"><a href="/logout">Logout</a></li>
-              </ul>
-            </div> -->
           </div> <!-- container -->
         </div> <!-- navbar navbar-default navbar-fixed-top -->
     </header>
@@ -80,26 +56,31 @@
         <div id="inner">
 
             <!-- Radio Rating -->
-            <form>
+            <form method="post" action="/postRating">
+            <!-- <form method="post" action="/checking"> -->
                 <div class="row" style="padding-top: 10px;">
                     <div class="col-sm-9">
                         <div align="center">
-                            <label >
-                                <input type="radio" id="q128" name="quality[21]" value="1" /> 1
+                            <input type="hidden" name="courseid" value={{course.course_id}}>
+                            <input type="hidden" name="coursename" value="{{course.course_name}}">
+                            <input type="hidden" name="courseinfo" value="{{course.course_info}}">
+                            <input type="hidden" name="courseprof" value="{{course.course_prof}}">
+                            <label>
+                                1 <input type="radio" id="q128" name="ratingValue" value="1" />
                             </label> 
-                            <label >
-                                <input type="radio" id="q129" name="quality[21]" checked="checked" value="2" /> 2
+                            <label>
+                                2 <input type="radio" id="q129" name="ratingValue" checked="checked" value="2" />
                             </label> 
-                            <label >
-                                <input type="radio" id="q130" name="quality[21]" value="3" /> 3
+                            <label>
+                                3 <input type="radio" id="q130" name="ratingValue" value="3" />
                             </label> 
-                            <label >
-                                <input type="radio" id="q131" name="quality[21]" value="4" /> 4
+                            <label>
+                                4 <input type="radio" id="q131" name="ratingValue" value="4" />
                             </label> 
-                            <label >
-                                <input type="radio" id="q132" name="quality[21]" value="5" /> 5
+                            <label>
+                                5 <input type="radio" id="q132" name="ratingValue" value="5" />
                             </label>
-                            <input type="submit" class="btn-rate btn-primary" value="Submit"></input>
+                            <input type="submit" class="btn-rate btn-primary" value="Submit Rating">
                         </div>
                     </div>
                 </div>
@@ -109,29 +90,6 @@
             <form id="send_message" action="">
                 <input id="user_input" placeholder="WHAT'S YOUR OPINION?" autocomplete="off" autofocus/>
             </form>
-
-<!--                 <div class="row">
-                    <div class="col-sm-3">Test 2 - No Bootstrap</div>
-                    <div class="col-sm-9">
-                        <div  >
-                            <label >
-                                <input type="radio" id="q128" name="quality[21]" value="1" /> 1
-                            </label> 
-                            <label >
-                                <input type="radio" id="q129" name="quality[21]" checked="checked" value="2" /> 2
-                            </label> 
-                            <label >
-                                <input type="radio" id="q130" name="quality[21]" value="3" /> 3
-                            </label> 
-                            <label >
-                                <input type="radio" id="q131" name="quality[21]" value="4" /> 4
-                            </label> 
-                            <label >
-                                <input type="radio" id="q132" name="quality[21]" value="5" /> 5
-                            </label>
-                        </div>
-                    </div>
-                </div> -->
 
             <ul id="messages">
                 {{#each newsfeed}}

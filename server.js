@@ -146,7 +146,9 @@ app.get("/", router.index.homepage);
 app.get("/courses", router.index.courses);
 // app.get("/homepage", router.index.homepage);
 app.post("/chat", isAuthenticated, router.chat.view);
+app.post("/postRating", router.chat.postRating);
 app.get("/results", router.index.rating);
+app.get("/checking", router.index.homepage);
 /* TODO: Routes for OAuth using Passport */
 app.get('/auth/twitter', passport.authenticate('twitter'));
 app.get('/auth/twitter/callback',
