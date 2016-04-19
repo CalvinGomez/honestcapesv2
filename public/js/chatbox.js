@@ -8,12 +8,19 @@
     $("#user_input").keypress(function(event) {
         if (event.which == 13) {
             event.preventDefault();
-            var message={ 'courseID': $('#courseID').val(),
-                'message': $('#user_input').val() };
+            if ($('#user_input').val().trim() == "") {
+                alert("Please enter a proper sentence.");
+            }
+            else {
+                var r = confirm("Would you like to post this comment?");
+                if (r == true) {                    
+                    var message={ 'courseID': $('#courseID').val(),
+                        'message': $('#user_input').val() };
 
-            socket.emit('chat message', message);
-            //console.log( $('#user_input').val());
-            $('#user_input').val('');
+                    socket.emit('chat message', message);
+                    $('#user_input').val('');
+                }
+            }
             //$("form").submit();
         }
     });
