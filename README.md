@@ -36,7 +36,7 @@ Alisa-	Helped with the front end design; modified bootstrap and other CSS 			fil
 
 Arnold-	Helped with the back end; implemented twitter login
 
-Calvin-	Lead the team and delegated tasks; helped with both front and back ends; implemented the rating system
+Calvin-	Lead the team and delegated tasks; helped with both front and back 			ends; implemented the rating system
 
 Diana-	Helped with the front end design; modified bootstrap and other CSS 			files; tried to implement the rating system with stars; did README
 
